@@ -1,0 +1,23 @@
+img{
+    width: 100%;
+    height: 100%;
+}
+
+li{
+list-style-type: none;
+}
+
+#about{
+    text-align: center;
+    font-family: 'Delicious Handrawn';
+    /* font-size: 20px; */
+    letter-spacing: 1px;
+}
+h3{
+    font-size: 40px;
+    color: #abac7f;
+    padding-top: 20px;
+}
+li{
+    font-size: 30px;
+}
