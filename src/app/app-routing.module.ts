@@ -10,11 +10,12 @@ import { MeatandfishComponent } from './components/menu-items/meatandfish/meatan
 import { NonalcoholicdrinksComponent } from './components/menu-items/nonalcoholicdrinks/nonalcoholicdrinks.component';
 import { SmallPlatesComponent } from './components/menu-items/small-plates/small-plates.component';
 import { SoupsandsaladsComponent } from './components/menu-items/soupsandsalads/soupsandsalads.component';
+import { MenuitemsComponent } from './components/menuitems/menuitems.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'menu', component: MenuComponent},
+  {path: 'menu', component: MenuitemsComponent},
   {path: 'aboutus', component: AboutusComponent},
   {path: 'alcoholicdrinks', component: AlcoholicdrinksComponent},
   {path: 'deserts', component: DesertsComponent},

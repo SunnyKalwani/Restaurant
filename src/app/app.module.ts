@@ -14,6 +14,13 @@ import { DesertsComponent } from './components/menu-items/deserts/deserts.compon
 import { NonalcoholicdrinksComponent } from './components/menu-items/nonalcoholicdrinks/nonalcoholicdrinks.component';
 import { AlcoholicdrinksComponent } from './components/menu-items/alcoholicdrinks/alcoholicdrinks.component';
 import { MenuitemsComponent } from './components/menuitems/menuitems.component';
+import {HttpClientModule} from '@angular/common/http';
+import { OrdersComponent } from './components/orders/orders.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomerCommentComponent } from './components/customer-comment/customer-comment.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
+import { AdminLoginformComponent } from './components/admin-loginform/admin-loginform.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +35,21 @@ import { MenuitemsComponent } from './components/menuitems/menuitems.component';
     DesertsComponent,
     NonalcoholicdrinksComponent,
     AlcoholicdrinksComponent,
-    MenuitemsComponent
+    MenuitemsComponent,
+    OrdersComponent,
+    CustomerCommentComponent,
+    FeedbackComponent,
+    AdminLoginformComponent,
+    AddItemComponent,
+ 
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

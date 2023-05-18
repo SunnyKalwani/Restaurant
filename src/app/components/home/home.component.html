@@ -4,12 +4,13 @@
             <h1>Ulu's Kitchen</h1>
             <p>The best indian Comfort food!<i class="fa-duotone fa-pan-food"></i></p>
             <div class="row">
-                <button class="col">About Us</button>
-                <button class="col">Check Menu</button>
+                <button class="col" routerLink="/aboutus">About Us</button>
+                <button class="col" routerLink="/menu">Check Menu</button>
             </div>
-            <button>Order Now <i class="fa-solid fa-utensils fa-shake"></i></button>
+            <button routerLink="/menu">Order Now <i class="fa-solid fa-utensils fa-shake"></i></button>
         </div>
 
-
-    </div>
+        <app-add-item></app-add-item>   
+     </div>
 </div>
+

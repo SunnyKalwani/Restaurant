@@ -1,0 +1,15 @@
+<form [formGroup] = "customerComment">
+    <p>
+        <label> Name </label>
+        <input type="text" formControlName ="customer_name">
+    </p>
+    <p>
+        <label> Enter your Comment </label>
+        <input type="text" formControlName ="comment">
+    </p>
+    <p>
+        <label> Comment Date </label>
+        <input type="datetime"formControlName="comment_date">
+    </p>
+    <button (click)="onSubmit()">Place Order</button>
+</form>
