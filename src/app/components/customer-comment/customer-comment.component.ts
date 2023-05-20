@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-customer-comment',
@@ -12,14 +12,28 @@ export class CustomerCommentComponent {
 
   constructor(private formBuilder: FormBuilder){
     this.customerComment = formBuilder.group({
-      customer_name:[],
-      comment:[],
-      comment_date:[],
+      customer_name:["", [Validators.required, Validators.minLength(3)]],
+      comment:["", [Validators.required, Validators.minLength(50)]],
+      comment_date:["", Validators.required],
     });
   }
   onSubmit(){
     console.log(this.customerComment.value);
     this.customerComment.reset();
+  }
+
+  // Getter Method
+
+  get customer_nameFormControl(){
+    return this.customerComment.get('customer_name')!;
+  }
+
+  get commentFormControl(){
+    return this.customerComment.get('comment')!;
+  }
+
+  get comment_dateFormControl(){
+    return this.customerComment.get('comment_date')!;
   }
 
 }

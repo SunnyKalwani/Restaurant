@@ -1,12 +1,33 @@
-<form [formGroup] = "adminLogin">
-    <p>
-        <label> Email: </label>
-        <input type="email" formControlName = "email">
-    </p>
-    <p>
-        <label> Password: </label>
-        <input type="password" formControlName ="password">
-    </p>
+<form [formGroup]="adminLogin" (ngSubmit)="onSubmit()" class="container">
 
-    <button type="submit" (click) = "onSubmit()">Submit</button>
+    <!-- Email Form Element -->
+    <div class="mb-3">
+        <label class="form-label">Email:</label>
+        <input class="form-control" rows="3" formControlName="email">
+        <div *ngIf="emailFormControl.dirty && emailFormControl.errors?.['email']" class="alert alert-danger"
+            role="alert">
+            Please enter valid email address
+        </div>
+        <div *ngIf="emailFormControl.touched && emailFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Email field is required
+        </div>
+    </div>
+
+    <!-- Email Form Element -->
+    <div class="mb-3">
+        <label class="form-label">Password:</label> 
+        <input class="form-control" rows="3" type="password" formControlName="password">
+        <div *ngIf="passwordFormControl.touched && passwordFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Password is a required field
+        </div>
+        <div *ngIf="passwordFormControl.dirty && passwordFormControl.errors?.['minlength']" class="alert alert-danger"
+            role="alert">
+            Password should be atleast 8 characters
+        </div>
+
+    </div>
+
+    <button type="submit" [disabled]="adminLogin.invalid">Submit</button>
 </form>

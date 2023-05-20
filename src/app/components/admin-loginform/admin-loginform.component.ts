@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-loginform',
@@ -12,14 +12,21 @@ export class AdminLoginformComponent {
 
   constructor(private formBuilder: FormBuilder){
     this.adminLogin = formBuilder.group({
-      email:[],
-      password:[],
+      email:["", [Validators.required, Validators.email]],
+      password:["", [Validators.required,Validators.minLength(8)]],
     });
-
   }
 
   onSubmit(){
     console.log(this.adminLogin.value);
     this.adminLogin.reset();
+  }
+
+  get emailFormControl(){
+    return this.adminLogin.get('email')!;
+  }
+
+  get passwordFormControl(){
+    return this.adminLogin.get('password')!;
   }
 }

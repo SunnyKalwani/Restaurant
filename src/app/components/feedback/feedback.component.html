@@ -1,25 +1,64 @@
-<form [formGroup] = "feedbackForm">
+<form [formGroup]="feedbackForm" (ngSubmit) = "onSubmit()" class="container">
 
-    <p>
-        <label> First Name </label>
-        <input type="text" formControlName = "first_name">
-    </p>
-    <p>
-        <label> Last Name </label>
-        <input type="text"formControlName = "last_name">
-    </p>
-    <p>
-        <label> Email id </label>
-        <input type="email" formControlName = "email_id">
-    </p>
-    <p>
-        <label> Feedback </label>
-        <input type="text" formControlName = "feedback">
-    </p>
-    <p>
-        <label> Feedback Date </label>
-        <input type="datetime" formControlName = "feedback_date">
-    </p>
+    <!-- First Name Form Element -->
+    <div class="mb-3">
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-control" formControlName="first_name">
 
-    <button type="submit" (click) = "onSubmit()"> Submit </button>
+        <!-- Displaying error messages -->
+        <div *ngIf="first_nameFormControl.touched && first_nameFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            First Name is a required field
+        </div>
+        <div *ngIf="first_nameFormControl.dirty && first_nameFormControl.errors?.['minlength']"
+            class="alert alert-danger" role="alert">
+            First Name must be atleast 3 characters.
+        </div>
+    </div>
+
+    <!-- Last Name Form Element -->
+    <div class="mb-3">
+        <label class="form-label">Last Name</label>
+        <input type="text" class="form-control" formControlName="last_name">
+
+        <!-- Displaying error messages -->
+        <div *ngIf="last_nameFormControl.touched && last_nameFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            Last Name is a required field
+        </div>
+        <div *ngIf="last_nameFormControl.dirty && last_nameFormControl.errors?.['minlength']" class="alert alert-danger"
+            role="alert">
+            Last Name must be atleast 3 characters.
+        </div>
+    </div>
+
+    <!-- Email Form Element -->
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email_id">
+
+        <!-- Displaying error messages -->
+        <div *ngIf="email_idFormControl.touched && email_idFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Email is a required field
+        </div>
+        <div *ngIf="email_idFormControl.dirty && email_idFormControl.errors?.['email']" class="alert alert-danger"
+            role="alert">
+            Please enter valid email address
+        </div>
+    </div>
+
+    <!-- Feedback Date Form Element -->
+    <div class="mb-3">
+        <label class="form-label">Feedback Date</label>
+        <input type="datetime-local" class="form-control" formControlName="feedback_date">
+
+        <!-- Displaying error messages -->
+        <div *ngIf="feedback_dateFormControl.touched && feedback_dateFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Feedback Date is a required field
+        </div>
+    </div>
+
+    <button type="submit"  [disabled]="feedbackForm.invalid"> Submit </button>
 </form>

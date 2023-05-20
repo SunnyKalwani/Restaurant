@@ -1,28 +1,70 @@
-<form [formGroup] = "addItemForm">
-<p>
-    <label> Item Name </label>
-    <input type="text" formControlName = "item_name">
-</p>
-<p>
-    <label> Item Price </label>
-    <input type="number" formControlName = "item_price">
-</p>
-<p>
-    <label> Description </label>
-    <input type="text" formControlName = "description">
-</p>
-<p>
-    <label> Category </label>
-    <input type="text" formControlName = "category">
-</p>
-<p>
-    <label> Image </label>
-    <input type="text" formControlName = "image">
-</p>
-<p>
-    <label> Veg/Non-Veg</label>
-    <input type="text" formControlName = "veg_nonveg">
-</p>
+<form [formGroup]="addItemForm" (ngSubmit)="onSubmit()" class="container">
 
-<button type="submit" (click) = "onSubmit()"> Submit </button>
+    <!-- Item Name Form Element -->
+    <div class="mb-3">
+        <label class="form-label">Item Name</label>
+        <input class="form-control" rows="3" formControlName="item_name">
+        <div *ngIf="item_nameFormControl.touched && item_nameFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            Item Name is a required field
+        </div>
+    </div>
+
+    <!-- Item Price Form Element -->
+    <div class="mb-3">
+        <label class="form-label">Item Price</label>
+        <input class="form-control" rows="3" formControlName="item_price" type="number">
+        <div *ngIf="item_priceFormControl.touched && item_priceFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            Item Price is a required field
+        </div>
+    </div>
+
+    <!-- Description Form Element -->
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea class="form-control" rows="3" formControlName="description" type="text"></textarea>
+        <div *ngIf="descriptionFormControl.touched && descriptionFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            Description is a required field
+        </div>
+        <div *ngIf="descriptionFormControl.touched && descriptionFormControl.errors?.['minlength']"
+            class="alert alert-danger" role="alert">
+            Description should be minimum 100 characters
+        </div>
+    </div>
+
+    <!-- Category Form Element -->
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input class="form-control" rows="3" formControlName="category" type="text">
+        <div *ngIf="categoryFormControl.touched && categoryFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Category is a required field
+        </div>
+    </div>
+
+    <!-- Category Form Element -->
+    <div class="mb-3">
+        <label class="form-label">Image</label>
+        <input class="form-control" rows="3" formControlName="image" type="text">
+        <div *ngIf="imageFormControl.touched && imageFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Image is a required field
+        </div>
+    </div>
+
+    <!-- Veg/NonVeg Form Element -->
+    <div class="mb-3">
+        <label class="form-label">Veg/NonVeg</label>
+        <select class="form-select" formControlName="veg_nonveg">
+            <option value="veg">Veg</option>
+            <option value="nonveg">NonVeg</option>
+        </select>
+        <div *ngIf="veg_nonvegFormControl.touched && veg_nonvegFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Veg/NonVeg is a required field
+        </div>
+    </div>
+    <button type="submit" [disabled]="addItemForm.invalid"> Submit </button>
 </form>

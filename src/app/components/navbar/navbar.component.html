@@ -1,0 +1,38 @@
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home">ULU's Kitchen</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto m-3 mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/home" routerLinkActive="active" id="a">Home</a>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLink="/menu" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="a">
+              Menu
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/smallplates">Small Plates</a></li>
+              <li><a class="dropdown-item" routerLink="/soupsandsalad">Soups and Salads</a></li>
+              <li><a class="dropdown-item" routerLink="/essentials">Essentials</a></li>
+              <li><a class="dropdown-item" routerLink="/meatandfish">Meat and Fish</a></li>
+              <li><a class="dropdown-item" routerLink="/deserts">Deserts</a></li>
+              <li><a class="dropdown-item" routerLink="/nonalcoholicdrinks">Non-Alcoholic Drinks</a></li>
+              <li><a class="dropdown-item" routerLink="/alcoholicdrinks">Alcoholic Drinks</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/aboutus" routerLinkActive="active" id="a">About Us</a>
+          </li>
+        </ul>
+        <button class="btn fa-beat" id="a" type="submit" routerLink="/menu" routerLinkActive="active">Order Now
+          !</button>
+  
+      </div>
+    </div>
+  </nav>

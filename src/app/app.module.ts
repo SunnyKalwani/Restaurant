@@ -21,6 +21,7 @@ import { CustomerCommentComponent } from './components/customer-comment/customer
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { AdminLoginformComponent } from './components/admin-loginform/admin-loginform.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { AddItemComponent } from './components/add-item/add-item.component';
     FeedbackComponent,
     AdminLoginformComponent,
     AddItemComponent,
+    NavbarComponent,
  
 
   ],

@@ -1,15 +1,50 @@
-<form [formGroup] = "customerComment">
-    <p>
-        <label> Name </label>
-        <input type="text" formControlName ="customer_name">
-    </p>
-    <p>
-        <label> Enter your Comment </label>
-        <input type="text" formControlName ="comment">
-    </p>
-    <p>
-        <label> Comment Date </label>
-        <input type="datetime"formControlName="comment_date">
-    </p>
-    <button (click)="onSubmit()">Place Order</button>
+<form [formGroup]="customerComment" (ngSubmit)="onSubmit" class="container">
+
+    <!--  Name Form Element -->
+    <div class="mb-3">
+        <label class="form-label"> Name</label>
+        <input type="text" class="form-control" formControlName="customer_name">
+
+        <!-- Displaying error messages -->
+        <div *ngIf="customer_nameFormControl.touched && customer_nameFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            First Name is a required field
+        </div>
+        <div *ngIf="customer_nameFormControl.dirty && customer_nameFormControl.errors?.['minlength']"
+            class="alert alert-danger" role="alert">
+            First Name must be atleast 3 characters.
+        </div>
+    </div>
+
+    <!--  Comment Form Element -->
+    <div class="mb-3">
+        <label class="form-label"> Enter your Comment</label>
+        <textarea type="text" class="form-control" formControlName="comment"></textarea>
+
+        <!-- Displaying error messages -->
+        <div *ngIf="commentFormControl.touched && commentFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Comment is a required field
+        </div>
+        <div *ngIf="commentFormControl.dirty && commentFormControl.errors?.['minlength']" class="alert alert-danger"
+            role="alert">
+            Comment must be atleast 50 characters.
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label"> Comment Date </label>
+        <input type="datetime-local" class="form-control" formControlName="comment_date">
+
+        <!-- Displaying error messages -->
+        <div *ngIf="comment_dateFormControl.touched && comment_dateFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Comment is a required field
+        </div>
+        <div *ngIf="comment_dateFormControl.dirty && comment_dateFormControl.errors?.['minlength']" class="alert alert-danger"
+            role="alert">
+            Comment must be atleast 50 characters.
+        </div>
+    </div>
+    <button (click)="onSubmit()" [disabled]="customerComment.invalid">Place Order</button>
 </form>
