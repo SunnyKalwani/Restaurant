@@ -1,9 +1,9 @@
-<form [formGroup]="feedbackForm" (ngSubmit) = "onSubmit()" class="container">
+<form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="container">
 
     <!-- First Name Form Element -->
     <div class="mb-3">
         <label class="form-label">First Name</label>
-        <input type="text" class="form-control" formControlName="first_name">
+        <input type="text" class="form-control" formControlName="first_name" placeholder="Enter your First Name here">
 
         <!-- Displaying error messages -->
         <div *ngIf="first_nameFormControl.touched && first_nameFormControl.errors?.['required']"
@@ -19,7 +19,7 @@
     <!-- Last Name Form Element -->
     <div class="mb-3">
         <label class="form-label">Last Name</label>
-        <input type="text" class="form-control" formControlName="last_name">
+        <input type="text" class="form-control" formControlName="last_name" placeholder="Enter your Last Name here">
 
         <!-- Displaying error messages -->
         <div *ngIf="last_nameFormControl.touched && last_nameFormControl.errors?.['required']"
@@ -35,7 +35,7 @@
     <!-- Email Form Element -->
     <div class="mb-3">
         <label class="form-label">Email</label>
-        <input type="email" class="form-control" formControlName="email_id">
+        <input type="email" class="form-control" formControlName="email_id" placeholder="Enter your email ID">
 
         <!-- Displaying error messages -->
         <div *ngIf="email_idFormControl.touched && email_idFormControl.errors?.['required']" class="alert alert-danger"
@@ -48,17 +48,33 @@
         </div>
     </div>
 
+    <!-- Feedback Form Element -->
+    <div class="mb-3">
+        <label class="form-label">Feedback</label>
+        <textarea type="text" class="form-control" formControlName="feedback" placeholder="Please leave a detailed feedback"></textarea>
+
+        <!-- Displaying error messages -->
+        <div *ngIf="feedbackFormControl.touched && feedbackFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Feedback is a required field
+        </div>
+        <div *ngIf="feedbackFormControl.dirty && feedbackFormControl.errors?.['minlength']" class="alert alert-danger"
+            role="alert">
+            Feedback must be atleast 100 characters.
+        </div>
+    </div>
+
     <!-- Feedback Date Form Element -->
     <div class="mb-3">
         <label class="form-label">Feedback Date</label>
         <input type="datetime-local" class="form-control" formControlName="feedback_date">
 
         <!-- Displaying error messages -->
-        <div *ngIf="feedback_dateFormControl.touched && feedback_dateFormControl.errors?.['required']" class="alert alert-danger"
-            role="alert">
+        <div *ngIf="feedback_dateFormControl.touched && feedback_dateFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
             Feedback Date is a required field
         </div>
     </div>
 
-    <button type="submit"  [disabled]="feedbackForm.invalid"> Submit </button>
+    <button type="submit" [disabled]="feedbackForm.invalid"> Submit Feedback </button>
 </form>

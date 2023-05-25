@@ -57,10 +57,14 @@
     <!-- Veg/NonVeg Form Element -->
     <div class="mb-3">
         <label class="form-label">Veg/NonVeg</label>
-        <select class="form-select" formControlName="veg_nonveg">
+        <!-- <select class="form-select" formControlName="veg_nonveg">
             <option value="veg">Veg</option>
-            <option value="nonveg">NonVeg</option>
-        </select>
+            <option value="nonveg">NonVeg</option> -->
+        <!-- </select> -->
+
+        <input class="form-control" rows="3" formControlName="veg_nonveg" type="text">
+
+
         <div *ngIf="veg_nonvegFormControl.touched && veg_nonvegFormControl.errors?.['required']" class="alert alert-danger"
             role="alert">
             Veg/NonVeg is a required field

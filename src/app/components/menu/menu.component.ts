@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output,OnChanges, SimpleChanges } from '@angular/core';
 import { Imenu } from 'src/app/interfaces/imenu';
 
 @Component({
@@ -8,4 +8,5 @@ import { Imenu } from 'src/app/interfaces/imenu';
 })
 export class MenuComponent {
   @Input() menu!: Imenu;
+
 }

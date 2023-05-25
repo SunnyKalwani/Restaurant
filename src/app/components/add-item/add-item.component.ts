@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-add-item',
@@ -10,7 +11,7 @@ export class AddItemComponent {
 
   addItemForm;
 
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder, private menuService: MenuService){
     this.addItemForm = formBuilder.group({
       item_name:["", [Validators.required]],
       item_price:["", [Validators.required]],
@@ -20,9 +21,15 @@ export class AddItemComponent {
       veg_nonveg:["", Validators.required],
     });
   }
+
   onSubmit(){
-    console.log(this.addItemForm.value);
+    
+    let item_data = this.addItemForm.value;
+    this.menuService.addItem(item_data).subscribe((results)=>{
+      console.log(results);
     this.addItemForm.reset();
+      alert("Item was added successfully");
+    });
   }
 
   get item_nameFormControl(){

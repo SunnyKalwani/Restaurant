@@ -1,11 +1,14 @@
-<div class = "card">
-<div class="card-header bg-secondary text-white">
-    <h4 class="card-title"> {{menu.item_name}}</h4>
-</div>
-<div class="card-body bg-primary text-white">
-    <p>{{menu.description}}</p>
-    <hr>
-    <p>{{menu.category}}</p>
-    <hr> 
-</div>
+<div class="card">
+    <div class="card-header bg-secondary text-white">
+        <h4 class="card-title"> {{menu.item_name}}</h4>
+    </div>
+    <div class="card-body bg-primary text-white">
+        <p>{{menu.description}}</p>
+        <hr>
+        <p>{{menu.category}}</p>
+        <hr>
+        <p>{{menu.id}}</p>
+        <hr>
+        <button [routerLink] ="['/checkout', menu.id ]"> Buy Now </button>
+    </div>
 </div>

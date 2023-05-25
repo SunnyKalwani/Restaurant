@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { CommentService } from 'src/app/services/comment.service';
 
 @Component({
   selector: 'app-customer-comment',
@@ -10,7 +11,8 @@ export class CustomerCommentComponent {
 
   customerComment;
 
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder,
+    private commentService: CommentService){
     this.customerComment = formBuilder.group({
       customer_name:["", [Validators.required, Validators.minLength(3)]],
       comment:["", [Validators.required, Validators.minLength(50)]],
@@ -19,6 +21,14 @@ export class CustomerCommentComponent {
   }
   onSubmit(){
     console.log(this.customerComment.value);
+    let comment_data = this.customerComment.value;
+
+    this.commentService.createComment(comment_data).subscribe((results)=>{
+      console.log(results);
+      this.customerComment.reset();
+      alert("Comment was submitted successfully");
+    })
+
     this.customerComment.reset();
   }
 

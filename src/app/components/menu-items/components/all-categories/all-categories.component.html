@@ -1,0 +1,11 @@
+<div class="container">
+
+    <div class="row">
+        <div class="container-fluid col-3">
+            <h1 id="HeadLine">All Catoegories</h1>
+            <div *ngFor=" let index of menus">
+                <app-menu [menu]="index"></app-menu>
+            </div>
+        </div>
+    </div>
+</div>

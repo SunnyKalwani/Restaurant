@@ -3,7 +3,7 @@
     <!--  Name Form Element -->
     <div class="mb-3">
         <label class="form-label"> Name</label>
-        <input type="text" class="form-control" formControlName="customer_name">
+        <input type="text" class="form-control" formControlName="customer_name" placeholder="Please enter your name">
 
         <!-- Displaying error messages -->
         <div *ngIf="customer_nameFormControl.touched && customer_nameFormControl.errors?.['required']"
@@ -19,7 +19,7 @@
     <!--  Comment Form Element -->
     <div class="mb-3">
         <label class="form-label"> Enter your Comment</label>
-        <textarea type="text" class="form-control" formControlName="comment"></textarea>
+        <textarea type="text" class="form-control" formControlName="comment" placeholder="Please enter your comment"></textarea>
 
         <!-- Displaying error messages -->
         <div *ngIf="commentFormControl.touched && commentFormControl.errors?.['required']" class="alert alert-danger"
@@ -46,5 +46,5 @@
             Comment must be atleast 50 characters.
         </div>
     </div>
-    <button (click)="onSubmit()" [disabled]="customerComment.invalid">Place Order</button>
+    <button (click)="onSubmit()" [disabled]="customerComment.invalid">Submit Comment</button>
 </form>
