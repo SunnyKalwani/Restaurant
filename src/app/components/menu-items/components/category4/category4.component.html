@@ -1,7 +1,7 @@
-<div class="container=fluid row">
-    <div class="container-fluid col-3">
-        <h1 id="HeadLine">Category 4</h1>
-        <div *ngFor=" let index of category4">
+<div class="container">
+    <h1 class="m-5 text-center" > Catoegory 4 </h1>
+    <div class="row">
+        <div *ngFor=" let index of category4" class="col-lg-4 col-md-6">
             <app-menu [menu]="index"></app-menu>
         </div>
     </div>

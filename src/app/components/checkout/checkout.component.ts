@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Imenu } from 'src/app/interfaces/imenu';
 import { MenuService } from 'src/app/services/menu.service';
 import { OrdersService } from 'src/app/services/orders.service';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-checkout',
@@ -17,6 +18,7 @@ export class CheckoutComponent {
   orderForm;
 
   constructor(private routeService: ActivatedRoute,
+    private route: Router,
     private menuService: MenuService,
     private formBuilder: FormBuilder,
     private orderService: OrdersService) {
@@ -38,7 +40,7 @@ export class CheckoutComponent {
       phone_number: ["", [Validators.required, Validators.minLength(10)]],
       address: ["", [Validators.required, Validators.minLength(10)]],
       items_ordered: [0, [Validators.required]],
-      order_date: ["", [Validators.required]]
+      order_date: new Date()
     });
 
   }
@@ -50,7 +52,8 @@ export class CheckoutComponent {
     this.orderService.createOrder(item_data).subscribe((results) => {
       console.log(results);
       this.orderForm.reset();
-      alert(`${this.checkoutItemName} for ${item_data.customer_name} will be ready in 30 minutes... Order Total:$ ${this.checkoutItemPrice}`)
+      alert(`${this.checkoutItemName} for ${item_data.customer_name} will be ready in 30 minutes... Order Total:$ ${this.checkoutItemPrice}`);
+      this.route.navigate(['menu']);
     })
 
 

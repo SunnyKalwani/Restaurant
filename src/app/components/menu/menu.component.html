@@ -1,14 +1,14 @@
+<div class="container m-3">
 <div class="card">
-    <div class="card-header bg-secondary text-white">
-        <h4 class="card-title"> {{menu.item_name}}</h4>
+    <div class="card-header text-dark">
+        <h5 class="card-title"> {{menu.item_name}}... ${{menu.item_price}}</h5>
     </div>
-    <div class="card-body bg-primary text-white">
-        <p>{{menu.description}}</p>
+    <div class="card-body bg-light text-dark  text-center">
+        <img class="card-img-top" [src]="menu.image " alt="">
         <hr>
-        <p>{{menu.category}}</p>
+        <p class="card-title">{{menu.description}}</p>
         <hr>
-        <p>{{menu.id}}</p>
-        <hr>
-        <button [routerLink] ="['/checkout', menu.id ]"> Buy Now </button>
+        <button class="btn" [routerLink] ="['/checkout', menu.id ]"> Buy Now </button>
     </div>
+</div>
 </div>

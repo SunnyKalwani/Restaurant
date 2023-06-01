@@ -16,13 +16,13 @@ export class CustomerCommentComponent {
     this.customerComment = formBuilder.group({
       customer_name:["", [Validators.required, Validators.minLength(3)]],
       comment:["", [Validators.required, Validators.minLength(50)]],
-      comment_date:["", Validators.required],
+      comment_date: new Date(),
     });
   }
   onSubmit(){
     console.log(this.customerComment.value);
     let comment_data = this.customerComment.value;
-
+    // comment_data.comment_date = new Date();
     this.commentService.createComment(comment_data).subscribe((results)=>{
       console.log(results);
       this.customerComment.reset();

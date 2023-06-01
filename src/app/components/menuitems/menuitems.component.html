@@ -1,7 +1,29 @@
-
 <br><br><br>
-<app-all-categories></app-all-categories>
-<app-category1></app-category1>
-<app-category2></app-category2>
-<app-category3></app-category3>
-<app-category4></app-category4>
+<br><br><br>
+
+<div class="container text-center">
+    <button class="btn" (click)="category_view = 'all'">All Categories</button>
+    <button class="btn" (click)="category_view = 'category1'"> Category 1</button>
+    <button class="btn" (click)="category_view = 'category2'"> Category 2</button>
+    <button class="btn" (click)="category_view = 'category3'"> Category 3</button>
+    <button class="btn" (click)="category_view = 'category4'"> Category 4</button>
+
+</div>
+
+<div class="container text-dark" [ngSwitch]="category_view">
+    <div *ngSwitchCase="'all'">
+        <app-all-categories></app-all-categories>
+    </div>
+    <div *ngSwitchCase="'category1'">
+        <app-category1></app-category1>
+    </div>
+    <div *ngSwitchCase="'category2'">
+        <app-category2></app-category2>
+    </div>
+    <div *ngSwitchCase="'category3'">
+        <app-category3></app-category3>
+    </div>
+    <div *ngSwitchCase="'category4'">
+        <app-category4></app-category4>
+    </div>
+</div>

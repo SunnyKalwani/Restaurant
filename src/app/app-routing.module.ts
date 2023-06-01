@@ -4,6 +4,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { MenuitemsComponent } from './components/menuitems/menuitems.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { AdminLoginformComponent } from './components/admin-loginform/admin-loginform.component';
+import { AdminpageComponent } from './components/adminpage/adminpage.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -11,6 +13,8 @@ const routes: Routes = [
   {path: 'menu', component: MenuitemsComponent},
   {path: 'aboutus', component: AboutusComponent},
   {path: 'checkout/:item_id', component: CheckoutComponent},
+  {path: 'login', component: AdminLoginformComponent},
+  {path: 'adminpage', component: AdminpageComponent}
   
 ];
 

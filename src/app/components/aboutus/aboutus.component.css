@@ -1,25 +1,17 @@
-img{
+#leftContainer {
+    background-image: url('https://cdn.pixabay.com/photo/2016/03/05/21/41/appetite-1239046__340.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 10%;
+    height: 100vh;
+}
+
+#leftcontent {
+    background-color: black;
+    opacity: 0.75;
     width: 100%;
-    height: 100%;
-    /* opacity: 0.75; */
-    border-radius: 10px;
-}
-
-li{
-list-style-type: none;
-}
-
-#about{
-    text-align: center;
-    font-family: 'Delicious Handrawn';
-    /* font-size: 20px; */
-    letter-spacing: 1px;
-}
-h3{
-    font-size: 40px;
-    color: #abac7f;
-    padding-top: 20px;
-}
-li{
-    font-size: 30px;
+    justify-content: center;
+    padding-top: 150px;
+    height: 100vh;
+    display: flex;
 }

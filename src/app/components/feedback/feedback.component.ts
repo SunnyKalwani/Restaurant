@@ -9,7 +9,7 @@ import { FeedbackService } from 'src/app/services/feedback.service';
 })
 export class FeedbackComponent {
 
-  feedbackForm;
+  feedbackForm; 
 
   constructor(private formBuilder: FormBuilder,
     private feedbackService: FeedbackService) {

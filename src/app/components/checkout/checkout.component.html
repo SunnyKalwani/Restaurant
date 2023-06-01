@@ -1,86 +1,76 @@
-<br><br><br><br><br><br><br><br>
+<div class="container p-5 mt-5">
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()" class="container col-8 mt-5" id="formstyle">
 
-<form [formGroup]="orderForm" (ngSubmit)="onSubmit()" class="container col-6" id="formstyle">
+        <!-- Name Form Element -->
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="customer_name">
 
-    <!-- Name Form Element -->
-    <div class="mb-3">
-        <label class="form-label">Name</label>
-        <input type="text" class="form-control" formControlName="customer_name">
+            <!-- Warning messages -->
+            <div *ngIf="customer_nameFormControl.touched && customer_nameFormControl.errors?.['required']"
+                class="alert alert-danger" role="alert">
+                Name field is required
+            </div>
 
-        <!-- Warning messages -->
-        <div *ngIf="customer_nameFormControl.touched && customer_nameFormControl.errors?.['required']"
-            class="alert alert-danger" role="alert">
-            Name field is required
+            <div *ngIf="customer_nameFormControl.dirty && customer_nameFormControl.errors?.['minlength']"
+                class="alert alert-danger" role="alert">
+                The name field must be atleast 3 characters
+            </div>
         </div>
 
-        <div *ngIf="customer_nameFormControl.dirty && customer_nameFormControl.errors?.['minlength']"
-            class="alert alert-danger" role="alert">
-            The name field must be atleast 3 characters
-        </div>
-    </div>
+        <!-- Phone Number Element -->
+        <div class="mb-3">
+            <label class="form-label">Phone number</label>
+            <input type="number" class="form-control" formControlName="phone_number">
 
-    <!-- Phone Number Element -->
-    <div class="mb-3">
-        <label class="form-label">Phone number</label>
-        <input type="number" class="form-control" formControlName="phone_number">
+            <!-- Warning messages -->
+            <div *ngIf="phone_numberFormControl.touched && phone_numberFormControl.errors?.['required']"
+                class="alert alert-danger" role="alert">
+                Phone Number field is required
+            </div>
 
-        <!-- Warning messages -->
-        <div *ngIf="phone_numberFormControl.touched && phone_numberFormControl.errors?.['required']"
-            class="alert alert-danger" role="alert">
-            Phone Number field is required
-        </div>
-
-        <div *ngIf="phone_numberFormControl.dirty && phone_numberFormControl.errors?.['minlength']"
-            class="alert alert-danger" role="alert">
-            Phone Number field must be atleast 10 characters
-        </div>
-    </div>
-
-    <!-- Address Element -->
-    <div class="mb-3">
-        <label class="form-label">Address</label>
-        <input type="text" class="form-control" formControlName="address">
-
-        <!-- Warning messages -->
-        <div *ngIf="addressFormControl.touched && addressFormControl.errors?.['required']" class="alert alert-danger"
-            role="alert">
-            Address field is required
+            <div *ngIf="phone_numberFormControl.dirty && phone_numberFormControl.errors?.['minlength']"
+                class="alert alert-danger" role="alert">
+                Phone Number field must be atleast 10 characters
+            </div>
         </div>
 
-        <div *ngIf="addressFormControl.dirty && addressFormControl.errors?.['minlength']" class="alert alert-danger"
-            role="alert">
-            Address field must be atleast 10 characters
+        <!-- Address Element -->
+        <div class="mb-3">
+            <label class="form-label">Address</label>
+            <input type="text" class="form-control" formControlName="address">
+
+            <!-- Warning messages -->
+            <div *ngIf="addressFormControl.touched && addressFormControl.errors?.['required']"
+                class="alert alert-danger" role="alert">
+                Address field is required
+            </div>
+
+            <div *ngIf="addressFormControl.dirty && addressFormControl.errors?.['minlength']" class="alert alert-danger"
+                role="alert">
+                Address field must be atleast 10 characters
+            </div>
         </div>
-    </div>
 
-    <!-- Food Item Element -->
-    <div class="mb-3">
-        <label class="form-label">Food Item</label>
-        <!-- <input type="text" class="form-control" formControlName="items_ordered" readonly> -->
-        <div class="form-control"> {{checkoutItemName}} </div>
+        <!-- Food Item Element -->
+        <div class="mb-3">
+            <label class="form-label">Food Item</label>
+            <!-- <input type="text" class="form-control" formControlName="items_ordered" readonly> -->
+            <div class="form-control"> {{checkoutItemName}} </div>
 
-        <!-- Warning messages -->
-        <!-- <div *ngIf="items_orderedFormControl.touched && items_orderedFormControl.errors?.['required']"
+            <!-- Warning messages -->
+            <!-- <div *ngIf="items_orderedFormControl.touched && items_orderedFormControl.errors?.['required']"
             class="alert alert-danger" role="alert">
             Food field is required
         </div> -->
-    </div>
-
-    <!-- Food Item Price -->
-    <div class="mb-3">
-        <label class="form-label">Item Price</label>
-        <div class="form-control"> $ {{checkoutItemPrice}} </div>
-    </div>
-    <!-- Order Date and Time Element -->
-    <div class="mb-3">
-        <label class="form-label">Order Date and time</label>
-        <input type="datetime-local" class="form-control" formControlName="order_date">
-
-        <!-- Warning messages -->
-        <div *ngIf="order_dateFormControl.touched && order_dateFormControl.errors?.['required']"
-            class="alert alert-danger" role="alert">
-            Order Date and time field is required
         </div>
-    </div>
-    <button [disabled]="orderForm.invalid"> Place Order </button>
-</form>
+
+        <!-- Food Item Price -->
+        <div class="mb-3">
+            <label class="form-label">Item Price</label>
+            <div class="form-control"> $ {{checkoutItemPrice}} </div>
+        </div>
+        
+        <button class="btn" [disabled]="orderForm.invalid"> Place Order </button>
+    </form>
+</div>

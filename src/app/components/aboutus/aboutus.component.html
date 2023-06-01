@@ -1,19 +1,39 @@
 <div class="container-fluid row">
-    <div class="col">
-        <br><br><br><br><br><br>
-        <app-about-us-left></app-about-us-left>
+    <div class="col" id="leftContainer">
+        <div class="row" id="leftcontent">
+            <div >
+                <i class="fa-solid fa-phone col"></i>
+                <i class="fa-solid fa-map-location-dot col"></i>
+                <i class="fa-brands fa-instagram col"></i>
+            </div>
+            <button (click)="content = 'timing'"> Checkout Store Timings</button>
+            <button (click)="content = 'feedback'"> Feedback Form </button>
+            <button (click)="content = 'comment'"> Comment Form Form </button>
+        </div>
     </div>
-    <div class="col" id="about">
+    <div class="col-6" [ngSwitch]="content">
         <br><br><br><br><br><br>
-        <app-about-timing></app-about-timing>
+        <div *ngSwitchCase="'timing'">
+            <app-about-timing></app-about-timing>
+        </div>
+        <div *ngSwitchCase="'feedback'">
+            <app-feedback></app-feedback>
+        </div>
+        <div *ngSwitchCase="'comment'">
+            <app-comments></app-comments>
+            <app-customer-comment></app-customer-comment>
+        </div>
+        <div *ngSwitchDefault>
+            404 Page not Found
+        </div>
     </div>
-    <div class="col" id="about">
+    <!-- <div class="col-6">
         <br><br><br><br><br><br>
         <app-feedback></app-feedback>
     </div>
-    <div class="col" id="about">
+    <div class="col-6" id="about">
         <br><br><br><br><br><br>
         <app-comments></app-comments>
         <app-customer-comment></app-customer-comment>
-    </div>
+    </div> -->
 </div>

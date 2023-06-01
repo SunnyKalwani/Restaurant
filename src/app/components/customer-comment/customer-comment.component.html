@@ -32,12 +32,12 @@
         </div>
     </div>
 
-    <div class="mb-3">
+    <!-- <div class="mb-3">
         <label class="form-label"> Comment Date </label>
-        <input type="datetime-local" class="form-control" formControlName="comment_date">
+        <input type="datetime-local" class="form-control" formControlName="comment_date"> -->
 
         <!-- Displaying error messages -->
-        <div *ngIf="comment_dateFormControl.touched && comment_dateFormControl.errors?.['required']" class="alert alert-danger"
+        <!-- <div *ngIf="comment_dateFormControl.touched && comment_dateFormControl.errors?.['required']" class="alert alert-danger"
             role="alert">
             Comment is a required field
         </div>
@@ -45,6 +45,6 @@
             role="alert">
             Comment must be atleast 50 characters.
         </div>
-    </div>
+    </div> -->
     <button (click)="onSubmit()" [disabled]="customerComment.invalid">Submit Comment</button>
 </form>

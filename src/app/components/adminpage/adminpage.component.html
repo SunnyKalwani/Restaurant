@@ -1,0 +1,26 @@
+<br><br><b></b>
+<br><br><br><br>
+
+
+<button (click) = "viewContent = 'addDeleteEdit'"> Add / Delete  or Edit Item</button>
+<button (click) = "viewContent = 'viewFeedbacks'"> View Feedbacks </button>
+<button (click) = "viewContent = 'viewOrders'"> View Orders </button>
+
+<div [ngSwitch] = "viewContent">
+
+    <div *ngSwitchCase = "'addDeleteEdit'">
+        <app-add-delete-edit></app-add-delete-edit>
+    </div>
+    <div *ngSwitchCase = "'viewFeedbacks'">
+        <app-view-feedbacks></app-view-feedbacks>
+    </div>
+    <div *ngSwitchCase = "'viewOrders'">
+        <app-view-orders></app-view-orders>
+    </div>
+    <div *ngSwitchDefault>
+        <h1>Click on button above to choose task</h1>
+    </div>
+
+</div>
+
+

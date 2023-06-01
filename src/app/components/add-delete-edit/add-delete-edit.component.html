@@ -1,0 +1,100 @@
+<form [formGroup]="menuForm" (ngSubmit)="onSubmit()" class="container">
+
+    <!-- Item Name Form Element -->
+    <div class="mb-3">
+        <label class="form-label"> Item Name </label>
+        <input type="text" class="form-control" formControlName="item_name" placeholder="Enter the menu item name here">
+
+        <!-- Displaying error messages -->
+        <div *ngIf="item_nameFormControl.touched && item_nameFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            First Name is a required field
+        </div>
+        <div *ngIf="item_nameFormControl.dirty && item_nameFormControl.errors?.['minlength']" class="alert alert-danger"
+            role="alert">
+            First Name must be atleast 5 characters.
+        </div>
+    </div>
+
+    <!-- Item Price Form Element -->
+    <div class="mb-3">
+        <label class="form-label"> Item Price </label>
+        <input type="number" class="form-control" formControlName="item_price"
+            placeholder="Enter the menu item price here">
+
+        <!-- Displaying error messages -->
+        <div *ngIf="item_priceFormControl.touched && item_priceFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            Item Price is a required field
+        </div>
+    </div>
+
+    <!--  Item Description Form Element -->
+    <div class="mb-3">
+        <label class="form-label"> Item Description </label>
+        <textarea type="text" class="form-control" formControlName="description"
+            placeholder="Enter the description of item here"></textarea>
+
+        <!-- Displaying error messages -->
+        <div *ngIf="descriptionFormControl.touched && descriptionFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            Description is a required field
+        </div>
+        <div *ngIf="descriptionFormControl.dirty && descriptionFormControl.errors?.['minlength']"
+            class="alert alert-danger" role="alert">
+            Description must be atleast 25 characters.
+        </div>
+    </div>
+
+    <!--  Item Category Form Element -->
+    <div class="mb-3">
+        <label class="form-label"> Item Category </label>
+        <select formControlName="category">
+            <option *ngFor="let index of categories" [value]="index.id">{{index.category}}</option>
+        </select>
+
+        <!-- Displaying error messages -->
+        <div *ngIf="categoryFormControl.touched && categoryFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Category is a required field
+        </div>
+    </div>
+
+    <!--  item Image Form Element -->
+    <div class="mb-3">
+        <label class="form-label"> Item Image </label>
+        <input type="text" class="form-control" formControlName="image" placeholder="Enter the menu item name here">
+
+        <!-- Displaying error messages -->
+        <div *ngIf="imageFormControl.touched && imageFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Image is a required field
+        </div>
+    </div>
+
+    <!-- Veg/NonVeg Form Element -->
+    <div class="mb-3">
+        <label class="form-label"> Veg/Non-Veg </label>
+        <select formControlName="veg_nonveg">
+            <option value="veg">Veg </option>
+            <option value="nonveg">Non-Veg </option>
+        </select>
+
+        <!-- Displaying error messages -->
+        <div *ngIf="veg_nonvegFormControl.touched && veg_nonvegFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            Veg/Non-Veg is a required field
+        </div>
+
+    </div>
+
+    <button type="submit"> Submit </button>
+
+</form>
+
+
+<div>
+    
+<!-- View and delete items -->
+<app-admin-menus></app-admin-menus>
+</div>

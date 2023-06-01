@@ -9,5 +9,6 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class MenuitemsComponent  {
 
+  category_view: string ="all" ;
 
 }

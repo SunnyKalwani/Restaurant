@@ -25,6 +25,16 @@ import { AboutTimingComponent } from './components/about-timing/about-timing.com
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { AdminpageComponent } from './components/adminpage/adminpage.component';
+import { AddDeleteEditComponent } from './components/add-delete-edit/add-delete-edit.component';
+import { ViewFeedbacksComponent } from './components/view-feedbacks/view-feedbacks.component';
+import { ViewOrdersComponent } from './components/view-orders/view-orders.component';
+import { AdminMenuComponent } from './components/admin-menu/admin-menu.component';
+import { AdminMenusComponent } from './components/admin-menus/admin-menus.component';
+import { AdminFeedbackComponent } from './components/admin-feedback/admin-feedback.component';
+import { AdminFeedbacksComponent } from './components/admin-feedbacks/admin-feedbacks.component';
+import { AdminorderComponent } from './components/adminorder/adminorder.component';
+import { AdminordersComponent } from './components/adminorders/adminorders.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +59,16 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     CommentComponent,
     CommentsComponent,
     CheckoutComponent,
+    AdminpageComponent,
+    AddDeleteEditComponent,
+    ViewFeedbacksComponent,
+    ViewOrdersComponent,
+    AdminMenuComponent,
+    AdminMenusComponent,
+    AdminFeedbackComponent,
+    AdminFeedbacksComponent,
+    AdminorderComponent,
+    AdminordersComponent,
  
 
   ],

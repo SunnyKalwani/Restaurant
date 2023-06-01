@@ -21,6 +21,10 @@ export class MenuService {
     return this.http.post<Imenu>(this.url + "/add-food", data);
   }
 
+  deleteItem(item_id: number){
+    return this.http.delete<Imenu>(this.url + "/" + item_id)
+  }
+
   getItemById(item_id: any){
     return this.http.get<Imenu>(this.url + "/food/" + item_id);
   }
