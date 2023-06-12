@@ -14,7 +14,7 @@ export class AdminMenuComponent implements OnChanges {
   @Output() deleteEvent = new EventEmitter();
 
   onDelete(){
-    if(`Are you sure you want to delete ${this.menu_data.item_name}?`){
+    if(confirm(`Are you sure you want to delete ${this.menu_data.item_name}?`)){
       this.deleteEvent.emit(this.menu_data.id); //Triggering the event
     }
   }

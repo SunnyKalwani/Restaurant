@@ -6,7 +6,7 @@
     <!-- Email Form Element -->
     <div class="mb-3">
         <label class="form-label">Email:</label>
-        <input class="form-control" rows="3" formControlName="email">
+        <input class="form-control" formControlName="email">
         <div *ngIf="emailFormControl.dirty && emailFormControl.errors?.['email']" class="alert alert-danger"
             role="alert">
             Please enter valid email address
@@ -20,7 +20,7 @@
     <!-- Email Form Element -->
     <div class="mb-3">
         <label class="form-label">Password:</label> 
-        <input class="form-control" rows="3" type="password" formControlName="password">
+        <input class="form-control" type="password" formControlName="password">
         <div *ngIf="passwordFormControl.touched && passwordFormControl.errors?.['required']" class="alert alert-danger"
             role="alert">
             Password is a required field
@@ -32,5 +32,5 @@
 
     </div>
 
-    <button type="submit" [disabled]="adminLogin.invalid">Submit</button>
+    <button class="btn text-center p-2  m-2 bg-dark text-white" type="submit" [disabled]="adminLogin.invalid">Submit</button>
 </form>

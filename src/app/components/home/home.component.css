@@ -1,11 +1,25 @@
 #first::before {
     display: block;
     content: "";
-    height: 100px;
+    height: 50px;
 }
 
+.firstLetter{
+    font-size: 30px;
+}
 
+.fontStyle{
+    font-family: 'Dancing Script';
+    font-size: larger;
+    font-weight: bold;
 
+}
+
+button{
+    background-color: #abac7f;
+    font-weight: bold;
+
+}
 
 #homepage {
     background-image: url('https://cdn.pixabay.com/photo/2016/03/05/21/41/appetite-1239046__340.jpg');
@@ -18,9 +32,13 @@
 
 @media(min-width: 768px){
     #homepage {
-        height: 100%;
+        height: 80%;
     }
+
+   
 }
+
+
 
 #homepagecontent {
     background-color: black;
@@ -32,10 +50,13 @@
     align-items: center; */
 }
 
+
 #uluskitchen {
     font-size: 100px;
     font-family: 'Dancing Script';
     text-decoration: underline;
+    color: #abac7f;
+
 }
 
 #uluskitchen2 {

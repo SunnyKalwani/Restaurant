@@ -1,7 +1,7 @@
-<form [formGroup]="menuForm" (ngSubmit)="onSubmit()" class="container">
+<form [formGroup]="menuForm" (ngSubmit)="onSubmit()" class="container bg-white shadow rounded p-5" >
 
     <!-- Item Name Form Element -->
-    <div class="mb-3">
+    <div class="m-3 p-2">
         <label class="form-label"> Item Name </label>
         <input type="text" class="form-control" formControlName="item_name" placeholder="Enter the menu item name here">
 
@@ -17,7 +17,7 @@
     </div>
 
     <!-- Item Price Form Element -->
-    <div class="mb-3">
+    <div class="m-3 p-2">
         <label class="form-label"> Item Price </label>
         <input type="number" class="form-control" formControlName="item_price"
             placeholder="Enter the menu item price here">
@@ -30,7 +30,7 @@
     </div>
 
     <!--  Item Description Form Element -->
-    <div class="mb-3">
+    <div class="m-3 p-2">
         <label class="form-label"> Item Description </label>
         <textarea type="text" class="form-control" formControlName="description"
             placeholder="Enter the description of item here"></textarea>
@@ -47,9 +47,9 @@
     </div>
 
     <!--  Item Category Form Element -->
-    <div class="mb-3">
+    <div class="m-3 p-2">
         <label class="form-label"> Item Category </label>
-        <select formControlName="category">
+        <select formControlName="category" class="ms-5">
             <option *ngFor="let index of categories" [value]="index.id">{{index.category}}</option>
         </select>
 
@@ -61,7 +61,7 @@
     </div>
 
     <!--  item Image Form Element -->
-    <div class="mb-3">
+    <div class="m-3 p-2">
         <label class="form-label"> Item Image </label>
         <input type="text" class="form-control" formControlName="image" placeholder="Enter the menu item name here">
 
@@ -73,9 +73,9 @@
     </div>
 
     <!-- Veg/NonVeg Form Element -->
-    <div class="mb-3">
+    <div class="m-3 p-2">
         <label class="form-label"> Veg/Non-Veg </label>
-        <select formControlName="veg_nonveg">
+        <select formControlName="veg_nonveg" class="ms-5">
             <option value="veg">Veg </option>
             <option value="nonveg">Non-Veg </option>
         </select>
@@ -87,14 +87,13 @@
         </div>
 
     </div>
-
-    <button type="submit"> Submit </button>
-
+    <div class="m-3 p-2 text-center">
+        <button type="submit" class="btn text-center my-3" [disabled]="menuForm.invalid"> Submit </button>
+    </div>
 </form>
 
 
 <div>
-    
-<!-- View and delete items -->
-<app-admin-menus></app-admin-menus>
+
+
 </div>

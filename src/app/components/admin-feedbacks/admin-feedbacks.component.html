@@ -1,23 +1,27 @@
-<table class="table">
+<div class="table-responsive">
+
+<table class="table table-hover">
     <thead>
-        <tr>
-            <th> ID </th>
-            <th> First Name </th>
-            <th> Last Name </th>
-            <th> Email ID </th>
-            <th> Feedback </th>
-            <th> Feedback Date</th>
+        <tr >
+            <th class="col"> ID </th>
+            <th class="col"> First Name </th>
+            <th class="col"> Last Name </th>
+            <th class="col"> Email ID </th>
+            <th class="col"> Order Description </th>
+            <th class="col"> Order Date and Time</th>
         </tr>
     </thead>
     <tbody >
 
         <tr *ngFor="let index of feedbacks">
-            <td> {{index.id}}</td>
-            <td> {{index.first_name}}</td>
-            <td> {{index.last_name}}</td>
-            <td> {{index.email_id}}</td>
-            <td> {{index.feedback}}</td>
-            <td> {{index.feedback_date | date: 'short'}}</td>
+            <td class="col"> {{index.id}}</td>
+            <td class="col"> {{index.first_name}}</td>
+            <td class="col"> {{index.last_name}}</td>
+            <td class="col"> {{index.email_id}}</td>
+            <td class="col"> {{index.feedback}}</td>
+            <td class="col"> {{index.feedback_date | date: 'short'}}</td>
         </tr>
     </tbody>
 </table>
+
+</div>

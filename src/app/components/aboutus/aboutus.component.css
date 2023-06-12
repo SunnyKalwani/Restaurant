@@ -1,3 +1,21 @@
+.fontStyle {
+    font-family: 'Dancing Script';
+
+}
+
+
+#aboutUs::before {
+    display: block;
+    content: "";
+    height: 80px;
+}
+
+#aboutUs {
+    background-color: #abac7f;
+    /* opacity: 0.9; */
+}
+
+
 #leftContainer {
     background-image: url('https://cdn.pixabay.com/photo/2016/03/05/21/41/appetite-1239046__340.jpg');
     background-repeat: no-repeat;
@@ -14,4 +32,10 @@
     padding-top: 150px;
     height: 100vh;
     display: flex;
+}
+
+button {
+    background-color: #abac7f;
+    font-size: 25px;
+    font-weight: bold;
 }

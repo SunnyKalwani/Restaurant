@@ -22,7 +22,7 @@ export class MenuService {
   }
 
   deleteItem(item_id: number){
-    return this.http.delete<Imenu>(this.url + "/" + item_id)
+    return this.http.delete<Imenu>(this.url + "/foods/" + item_id)
   }
 
   getItemById(item_id: any){

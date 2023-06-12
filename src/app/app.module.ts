@@ -35,6 +35,7 @@ import { AdminFeedbackComponent } from './components/admin-feedback/admin-feedba
 import { AdminFeedbacksComponent } from './components/admin-feedbacks/admin-feedbacks.component';
 import { AdminorderComponent } from './components/adminorder/adminorder.component';
 import { AdminordersComponent } from './components/adminorders/adminorders.component';
+import { AdminRegisterFormComponent } from './components/admin-register-form/admin-register-form.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { AdminordersComponent } from './components/adminorders/adminorders.compo
     AdminFeedbacksComponent,
     AdminorderComponent,
     AdminordersComponent,
+    AdminRegisterFormComponent,
  
 
   ],

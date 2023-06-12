@@ -29,7 +29,7 @@ export class FeedbackComponent {
     this.feedbackService.createFeedback(feedback_data).subscribe((results)=>{
       console.log(results);
       this.feedbackForm.reset();
-      alert("Feedback was submitted successfully");
+      alert("Party Order was submitted successfully");
     })
     this.feedbackForm.reset();
   }

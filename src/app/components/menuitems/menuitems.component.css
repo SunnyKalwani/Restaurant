@@ -1,4 +1,24 @@
+#menuPage::before{
+    display: block;
+    content: "";
+    height: 100px;
+}
+
 button:hover{
     background-color: #abac7f;
     color: white;
+    font-size: larger;
+}
+
+button{
+    background-color: beige;
+}
+
+.fontStyle{
+    font-family: 'Dancing Script';
+
+}
+
+section{
+    background-color: lightgray;
 }

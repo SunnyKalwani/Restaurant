@@ -10,7 +10,7 @@
 
 @media(min-width: 992px){
     .active {
-        margin-top: 30%;
+        margin-top: 5%;
 
     }
 }
@@ -27,7 +27,7 @@ a {
 }
 
 nav{
-    height: auto;
+    height: 80px;
 }
 
 
@@ -37,6 +37,8 @@ nav{
     border-radius: 20px;
     font-size:50px;
 }
+
+
 
 /*
 

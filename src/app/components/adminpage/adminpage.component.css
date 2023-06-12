@@ -1,0 +1,27 @@
+section::before {
+    display: block;
+    content: "";
+    height: 50px;
+}
+
+img {
+    max-width: 250px;
+    max-height: 200px;
+}
+
+a{
+    background-color: #abac7f;
+
+}
+
+button:hover {
+    font-size: 20px;
+    background-color: #abac7f;
+    border: 5px;
+}
+
+button:active{
+    font-size: 20px;
+    background-color: #abac7f;
+    border: 5px;
+}

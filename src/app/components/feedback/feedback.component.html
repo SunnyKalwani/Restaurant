@@ -1,7 +1,7 @@
 <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="container">
 
     <!-- First Name Form Element -->
-    <div class="mb-3">
+    <div class="mb-3 my-2">
         <label class="form-label">First Name</label>
         <input type="text" class="form-control" formControlName="first_name" placeholder="Enter your First Name here">
 
@@ -17,7 +17,7 @@
     </div>
 
     <!-- Last Name Form Element -->
-    <div class="mb-3">
+    <div class="mb-3 my-2">
         <label class="form-label">Last Name</label>
         <input type="text" class="form-control" formControlName="last_name" placeholder="Enter your Last Name here">
 
@@ -33,7 +33,7 @@
     </div>
 
     <!-- Email Form Element -->
-    <div class="mb-3">
+    <div class="mb-3 my-2">
         <label class="form-label">Email</label>
         <input type="email" class="form-control" formControlName="email_id" placeholder="Enter your email ID">
 
@@ -49,9 +49,9 @@
     </div>
 
     <!-- Feedback Form Element -->
-    <div class="mb-3">
-        <label class="form-label">Feedback</label>
-        <textarea type="text" class="form-control" formControlName="feedback" placeholder="Please leave a detailed feedback"></textarea>
+    <div class="mb-3 my-2">
+        <label class="form-label">Description</label>
+        <textarea type="text" class="form-control" formControlName="feedback" placeholder="Please describe services required"></textarea>
 
         <!-- Displaying error messages -->
         <div *ngIf="feedbackFormControl.touched && feedbackFormControl.errors?.['required']" class="alert alert-danger"
@@ -65,16 +65,17 @@
     </div>
 
     <!-- Feedback Date Form Element -->
-    <div class="mb-3">
-        <label class="form-label">Feedback Date</label>
+    <div class="mb-3 my-2">
+        <label class="form-label">Party Order Date and Time</label>
         <input type="datetime-local" class="form-control" formControlName="feedback_date">
 
         <!-- Displaying error messages -->
-        <div *ngIf="feedback_dateFormControl.touched && feedback_dateFormControl.errors?.['required']"
-            class="alert alert-danger" role="alert">
-            Feedback Date is a required field
+        <div *ngIf="feedback_dateFormControl.touched && feedback_dateFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Party Order Date and Time is a required field
         </div>
+    
     </div>
-
-    <button type="submit" [disabled]="feedbackForm.invalid"> Submit Feedback </button>
+ 
+    <button type="submit" class="btn text-dark" [disabled]="feedbackForm.invalid"> Submit Party Order Request </button>
 </form>

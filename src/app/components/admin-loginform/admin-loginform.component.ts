@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-admin-loginform',
@@ -9,27 +10,38 @@ import { Router } from '@angular/router';
 })
 export class AdminLoginformComponent {
 
-  adminLogin;
+  adminLogin: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-    private router: Router){
+    private adminService: AdminService, private router: Router) {
     this.adminLogin = formBuilder.group({
-      email:["", [Validators.required, Validators.email]],
-      password:["", [Validators.required,Validators.minLength(8)]],
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", [Validators.required, Validators.minLength(8)]],
     });
   }
 
-  onSubmit(){
-    console.log(this.adminLogin.value);
-    this.adminLogin.reset();
-    this.router.navigate(['/adminpage']);
+  onSubmit() {
+    let formData = this.adminLogin.value;
+
+    this.adminService.loginAdmin(formData).subscribe({
+      next: (result) => {
+        localStorage.setItem("currentAdmin", JSON.stringify(result)); //Store the user data on our browser
+        alert("Login was successful");
+        this.router.navigate(['/adminpage']);
+
+      },
+      error: (err) => {
+        alert(err.error);
+        console.log(err);
+      }
+    });
   }
 
-  get emailFormControl(){
+  get emailFormControl() {
     return this.adminLogin.get('email')!;
   }
 
-  get passwordFormControl(){
+  get passwordFormControl() {
     return this.adminLogin.get('password')!;
   }
 }
