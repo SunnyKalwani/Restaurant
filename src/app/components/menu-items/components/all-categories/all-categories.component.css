@@ -1,4 +1,31 @@
 h1{
     font-size: 60px;
+    
 }
+
+button{
+    background-color: #abac7f;
+}
+
+button:hover{
+    background-color: grey;
+    color: white;
+}
+
+.card-header{
+    background-color: #abac7f;
+}
+
+.card-title{
+    height: 50px
+}
+
+img{
+ max-width: 250px !important;
+ max-height: 250px !important;
+}
+
+
+
+
 

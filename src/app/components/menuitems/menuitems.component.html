@@ -1,12 +1,16 @@
 <section class="p-5">
     <div class="container-fluid fontStyle" id="menuPage">
         <div class="container text-center my-5">
-            <button class="btn m-1" (click)="category_view = 'all'">All Categories</button>
-            <button class="btn m-1" (click)="category_view = 'category1'"> Category 1</button>
-            <button class="btn m-1" (click)="category_view = 'category2'"> Category 2</button>
-            <button class="btn m-1" (click)="category_view = 'category3'"> Category 3</button>
-            <button class="btn m-1" (click)="category_view = 'category4'"> Category 4</button>
-
+            <button class="btn m-1 border-dark" (click)="category_view = 'all'">All Categories</button>
+            <button class="btn m-1 border-dark" (click)="category_view = 'category1'"> Biryani</button>
+            <button class="btn m-1 border-dark" (click)="category_view = 'category2'"> Starters</button>
+            <button class="btn m-1 border-dark" (click)="category_view = 'category3'"> Deserts</button>
+            <button class="btn m-1 border-dark" (click)="category_view = 'category4'"> Drinks</button>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end fixed-bottom">
+                <button class="btn my-5 bg-dark " routerLink = "/cart"> <i class="fa-solid fa-cart-shopping  " style="font-size: 40px; color: beige;"></i>
+                    <div class="badge bg-danger" style="font-size: 10px;">{{totalCartItems}}</div>
+                </button>
+            </div>
         </div>
 
         <div class="container text-dark" [ngSwitch]="category_view">

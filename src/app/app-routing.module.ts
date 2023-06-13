@@ -8,6 +8,7 @@ import { AdminLoginformComponent } from './components/admin-loginform/admin-logi
 import { AdminpageComponent } from './components/adminpage/adminpage.component';
 import { AuthguardService } from './services/authguard.service';
 import { AdminRegisterFormComponent } from './components/admin-register-form/admin-register-form.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'checkout/:item_id', component: CheckoutComponent},
   {path: 'login', component: AdminLoginformComponent},
   {path: 'adminpage', component: AdminpageComponent, canActivate: [AuthguardService]},
-  {path: 'register', component: AdminRegisterFormComponent}
+  {path: 'register', component: AdminRegisterFormComponent},
+  {path: 'cart', component: CartComponent}
   
 ];
 

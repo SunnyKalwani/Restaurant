@@ -1,0 +1,13 @@
+#first::before {
+    display: block;
+    content: "";
+    height: 100px;
+}
+
+div{
+    font-family: 'Dancing Script';
+}
+
+button{
+    background-color: #abac7f !important
+}

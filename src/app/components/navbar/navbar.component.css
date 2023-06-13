@@ -27,7 +27,10 @@ a {
 }
 
 nav{
-    height: 80px;
+    height: 70px;
+}
+.nav-item{
+    background-color: beige;
 }
 
 

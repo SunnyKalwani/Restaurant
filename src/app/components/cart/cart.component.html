@@ -1,0 +1,68 @@
+<div id="first">
+
+    <!-- Cart with items -->
+    <ng-container *ngIf="productList.length !=0">
+        <div class="container p-5 ">
+            <table class="table table-responsive  table-hover">
+                <thead>
+                    <tr style="font-size: 20px;">
+                        <th scope="col" class="display-6 "> Sr. No. </th>
+                        <th scope="col" class="display-6 "> Image </th>
+                        <th scope="col" class="display-6 "> Item Name </th>
+                        <th scope="col" class="display-6 ">  Price </th>
+                        <th scope="col" class="display-6 "> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of productList; let i = index">
+                        <td> {{i+1}}</td>
+                        <td> <img src="{{item.image}}"  style="max-width: 100px; " class="rounded shadow"> </td>
+
+                        <td> {{item.item_name}} </td>
+                        <td>${{item.item_price}} </td>
+
+                        <td> <button class="btn btn-danger text-danger" (click)="removeItem(item)"><i
+                                    class="fa-solid fa-trash-can"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                        </td>
+                        <td style="font-size: 20px;"><strong>Total: </strong> 
+                            <hr> <br><strong>Taxes: </strong>
+                            <hr>  <br><strong>Grand Total: </strong> <hr>
+                        </td>
+                        <td style="font-size: 20px;"><strong>$ {{preTax}}</strong> 
+                            <hr>  <br> <strong>${{taxes | number: '1.2-2' }}</strong>
+                            <hr>  <br> <strong>${{grandTotal| number: '1.2-2'  }}</strong><hr>
+                            <button class="btn btn-danger m-2 text-dark" (click)="emptyCart()">Empty Cart </button>
+                            <button class="btn btn-primary m-2 text-dark" routerLink="/menu">Shop More </button>
+                            <button class="btn btn-success m-2 text-dark">Checkout </button>
+                        </td>
+                    </tr>
+                    <tr>
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </ng-container>
+
+
+
+
+    <!-- Empty Cart -->
+    <ng-container *ngIf="productList==0">
+        <div class="container text-center text-light shadow my-5 p-5 bg-secondary">
+            <h1 class="bg-light text-dark rounded shadow py-3"> <strong> My Cart </strong></h1>
+            <div class="center">
+                <img src="https://cdn.pixabay.com/photo/2016/05/25/20/17/icon-1415760_640.png"
+                    class="rounded shadow w-50 h-25 my-5">
+                <h3 class="py-3">Your Cart is Empty!!</h3>
+                <button class="btn p-3 my-4 shadow" routerLink="/menu">Click here to Add Items</button>
+            </div>
+        </div>
+    </ng-container>
+</div>
