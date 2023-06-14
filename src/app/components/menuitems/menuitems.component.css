@@ -8,10 +8,12 @@ button:hover{
     background-color: #abac7f;
     color: white;
     font-size: larger;
+    font-size: 40px;
 }
 
 button{
     background-color: beige;
+    font-size: 30px;
 }
 
 .fontStyle{

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Imenu } from 'src/app/interfaces/imenu';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-orders',
@@ -9,19 +11,34 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class OrdersComponent {
 
   orderForm;
+  productList!: Imenu[];
+  orderItems!: number[];
+  grandTotal!: number;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private cartService: CartService) {
     this.orderForm = formBuilder.group({
       customer_name: ["", [Validators.required, Validators.minLength(3)]],
       phone_number: ["", [Validators.required, Validators.minLength(10)]],
       address: ["", [Validators.required, Validators.minLength(10)]],
-      items_ordered: ["", [Validators.required]],
-      order_date: ["", [Validators.required]]
+      items_ordered:[],
+      order_date: new Date(),
 
     });
+
+    console.log("component")
+
+    cartService.getProducts().subscribe((results)=>{
+      this.productList = results;
+      this.orderItems = this.productList.map(item => item.id);
+      console.log(this.orderItems)
+      this.grandTotal = this.cartService.getTotalPrice() +(0.13*this.cartService.getTotalPrice());
+    })
+
+
   }
   onSubmit() {
     console.log(this.orderForm.value);
+    console.log(this.productList)
     this.orderForm.reset();
   }
 

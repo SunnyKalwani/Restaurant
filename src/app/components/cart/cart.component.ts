@@ -29,4 +29,8 @@ export class CartComponent {
   emptyCart(){
     this.cartService.removeAllCart();
   }
+
+  // Form Javascript
+
+  
 }

@@ -24,6 +24,7 @@ button{
 #homepage {
     background-image: url('https://cdn.pixabay.com/photo/2016/03/05/21/41/appetite-1239046__340.jpg');
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     font-family: 'Dancing Script';
     width: 100%;

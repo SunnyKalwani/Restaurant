@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="m-5 text-center" > Zabakchu <span style="color: red;"> Deserts!!</span> </h1>
+    <h1 class="m-5 text-center"> Zabakchu <span style="color: red;"> Deserts!!</span> </h1>
     <div class="row p-3">
         <ng-container *ngFor="let index of category3">
             <div class="card col-lg-4  col-md-6 col-sm-12 p-2 border-white bg-white " style="min-height: 600px;">
@@ -10,9 +10,8 @@
                     <div class="card-body bg-light shadow text-dark  text-center" style="height: 500px;">
                         <img class="card-img-top w-100 h-50" [src]="index.image " alt="">
                         <hr>
-                        <p class="card-title">{{index.description}}</p>
-                        <hr>
-                        <p class="card-title"> <strong>${{index.item_price}}</strong> </p>
+                        <p class="card-title my-3">{{index.description}}</p>
+                        <p class="card-title my-4"> <strong>${{index.item_price}}</strong> </p>
 
                         <button class="btn " (click)=addtoCart(index)> Add to Cart</button>
                     </div>

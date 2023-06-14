@@ -41,16 +41,15 @@
 
 a {
     font-family: 'Dancing Script';
-    font-size: 30px;
+    font-size: 22px;
+    color: black;
 }
 
 #footer {
-    background-color: beige;
+    background-color: beige !important;
     font-family: 'Dancing Script';
     font-size: 15px;
     letter-spacing: 2px;
-    height: 30px;
-    padding-bottom: 50px;
 }
 
 #trade {

@@ -11,7 +11,7 @@ import { MenuService } from 'src/app/services/menu.service';
 export class Category3Component implements OnInit {
   category3!: Imenu[];
   constructor(private menuService: MenuService, private cartService: CartService) {
-    menuService.getByCategory1().subscribe((results)=>{
+    menuService.getByCategory3().subscribe((results)=>{
       this.category3 = results;
 
       this.category3.forEach((a:any)=>{

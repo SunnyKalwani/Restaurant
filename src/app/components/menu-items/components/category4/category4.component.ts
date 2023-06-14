@@ -12,7 +12,7 @@ export class Category4Component implements OnInit {
 
   category4!: Imenu[];
   constructor(private menuService: MenuService, private cartService: CartService) {
-    menuService.getByCategory1().subscribe((results)=>{
+    menuService.getByCategory4().subscribe((results)=>{
       this.category4 = results;
 
       this.category4.forEach((a:any)=>{

@@ -12,7 +12,7 @@ export class Category2Component implements OnInit{
 
   category2!: Imenu[];
   constructor(private menuService: MenuService, private cartService: CartService) {
-    menuService.getByCategory1().subscribe((results)=>{
+    menuService.getByCategory2().subscribe((results)=>{
       this.category2 = results;
 
       this.category2.forEach((a:any)=>{
@@ -22,10 +22,11 @@ export class Category2Component implements OnInit{
   }
 
   ngOnInit(): void {
-    console.log('Category 1 component initialized');
+    console.log('Category 2 component initialized');
     let data = this.cartService.testCart;
     console.log(data);
   }
+  
   addtoCart(index: any){
     console.log(index)
     this.cartService.addtoCart(index);

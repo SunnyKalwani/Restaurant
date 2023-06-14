@@ -10,9 +10,9 @@
                     <div class="card-body bg-light shadow text-dark  text-center" style="height: 500px;">
                         <img class="card-img-top w-100 h-50" [src]="index.image " alt="">
                         <hr>
-                        <p class="card-title">{{index.description}}</p>
-                        <hr>
-                        <p class="card-title"> <strong>${{index.item_price}}</strong> </p>
+                        <p class="card-title my-3">{{index.description}}</p>
+                        
+                        <p class="card-title my-4"> <strong>${{index.item_price}}</strong> </p>
 
                         <button class="btn " (click)=addtoCart(index)> Add to Cart</button>
                     </div>

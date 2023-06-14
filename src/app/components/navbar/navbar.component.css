@@ -10,8 +10,7 @@
 
 @media(min-width: 992px){
     .active {
-        margin-top: 5%;
-
+        /* margin-top: 5%; */
     }
 }
 
@@ -22,7 +21,7 @@ a {
 #a:hover {
     background-color: black;
     color: white;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 
 }
 
@@ -31,6 +30,7 @@ nav{
 }
 .nav-item{
     background-color: beige;
+    font-size: 22px;
 }
 
 

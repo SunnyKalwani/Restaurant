@@ -5,6 +5,7 @@ import { Imenu } from 'src/app/interfaces/imenu';
 import { MenuService } from 'src/app/services/menu.service';
 import { OrdersService } from 'src/app/services/orders.service';
 import { HomeComponent } from '../home/home.component';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -12,48 +13,49 @@ import { HomeComponent } from '../home/home.component';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent {
-  checkoutItem!: Imenu;
-  checkoutItemName!: string;
+  productList!: Imenu[];
   checkoutItemPrice!: number;
   orderForm;
+  orderItems!: any;
+
 
   constructor(private routeService: ActivatedRoute,
     private route: Router,
     private menuService: MenuService,
     private formBuilder: FormBuilder,
-    private orderService: OrdersService) {
-
-    let itemId = routeService.snapshot.paramMap.get('item_id');
-    menuService.getItemById(itemId).subscribe((results) => {
-      this.checkoutItem = results;
-      console.log(this.checkoutItem);
-      this.checkoutItemPrice = this.checkoutItem.item_price;
-      this.checkoutItemName = this.checkoutItem.item_name;
-      console.log(this.checkoutItemName);
-      this.orderForm.patchValue(
-        { items_ordered: this.checkoutItem.id }
-      )
-    })
+    private orderService: OrdersService,
+    private cartService: CartService) {
 
     this.orderForm = formBuilder.group({
       customer_name: ["", [Validators.required, Validators.minLength(3)]],
       phone_number: ["", [Validators.required, Validators.minLength(10)]],
       address: ["", [Validators.required, Validators.minLength(10)]],
-      items_ordered: [0, [Validators.required]],
+      items_ordered: "",
       order_date: new Date()
     });
+
+    cartService.getProducts().subscribe((results) => {
+      this.productList = results;
+      this.orderItems = this.productList.map(item => item.id);
+      
+      console.log(this.orderItems)
+      this.checkoutItemPrice = this.cartService.getTotalPrice() + (0.13 * this.cartService.getTotalPrice());
+
+    })
+
+
 
   }
 
   onSubmit() {
     console.log(this.orderForm.value);
     let item_data = this.orderForm.value;
-
+    item_data.items_ordered = JSON.stringify(this.orderItems);
     this.orderService.createOrder(item_data).subscribe((results) => {
       console.log(results);
       this.orderForm.reset();
-      alert(`${this.checkoutItemName} for ${item_data.customer_name} will be ready in 30 minutes... Order Total:$ ${this.checkoutItemPrice}`);
-      this.route.navigate(['menu']);
+        alert(`Order for ${item_data.customer_name} will be ready in 30 minutes... Order Total:$ ${this.checkoutItemPrice}`);
+        this.route.navigate(['menu']);
     })
 
 

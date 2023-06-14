@@ -2,9 +2,17 @@ h1{
     font-size: 60px;
     
 }
+p{
+    font-size: 25px;
+}
+
+h5{
+    font-size: 25px;
+}
 
 button{
     background-color: #abac7f;
+    font-size: 22px;
 }
 
 button:hover{
