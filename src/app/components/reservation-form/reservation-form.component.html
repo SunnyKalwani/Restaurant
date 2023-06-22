@@ -1,0 +1,68 @@
+<form class="container-fluid" [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+    <!-- First Name Form Element -->
+    <div class="mb-3 my-2">
+        <label class="form-label"> Name</label>
+        <input type="text" class="form-control" formControlName="name" placeholder="Enter your Name here">
+
+        <!-- Displaying error messages -->
+        <div *ngIf="nameFormControl.touched && nameFormControl.errors?.['required']" class="alert alert-danger"
+            role="alert">
+            Name is a required field
+        </div>
+        <div *ngIf="nameFormControl.dirty && nameFormControl.errors?.['minlength']" class="alert alert-danger"
+            role="alert">
+            Name must be atleast 3 characters.
+        </div>
+    </div>
+
+    <!-- Phone Number Form Element -->
+    <div class="mb-3 my-2">
+        <label class="form-label"> Phone Number</label>
+        <input type="number" class="form-control" formControlName="phone_number"
+            placeholder="Enter your Phone Number here">
+
+        <!-- Displaying error messages -->
+        <div *ngIf="phone_numberFormControl.touched && phone_numberFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            Phone Number is a required field
+        </div>
+        <div *ngIf="phone_numberFormControl.dirty && phone_numberFormControl.errors?.['minlength']"
+            class="alert alert-danger" role="alert">
+            Phone Number must be atleast 10 characters.
+        </div>
+    </div>
+
+    <!-- Reservation Date and Time Form Element -->
+    <div class="mb-3 my-2">
+        <label class="form-label">Reservation Date and Time</label>
+        <input type="datetime-local" class="form-control" formControlName="reservation_date">
+
+        <!-- Displaying error messages -->
+        <div *ngIf="reservation_dateFormControl.touched && reservation_dateFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            Reservation Date and Time is a required field
+        </div>
+
+    </div>
+
+    <!-- Table Type Form Element -->
+    <div class="m-3 p-2">
+        <label class="form-label"> Table Type </label>
+        <select formControlName="numberofpeople" class="ms-5">
+            <option value="2">Couple (2 seats) </option>
+            <option value="4">Small Group (4 seats) </option>
+            <option value="6">Large Group (6 seats) </option>
+        </select>
+
+        <!-- Displaying error messages -->
+        <div *ngIf="numberofpeopleFormControl.touched && numberofpeopleFormControl.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            Table type is a required field
+        </div>
+
+    </div>
+
+    <div class="m-3 p-2 text-center">
+        <button type="submit" class="btn text-center my-3" [disabled]="reservationForm.invalid"> Submit </button>
+    </div>
+</form>

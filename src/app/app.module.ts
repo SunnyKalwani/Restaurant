@@ -37,6 +37,8 @@ import { AdminorderComponent } from './components/adminorder/adminorder.componen
 import { AdminordersComponent } from './components/adminorders/adminorders.component';
 import { AdminRegisterFormComponent } from './components/admin-register-form/admin-register-form.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ReservationFormComponent } from './components/reservation-form/reservation-form.component';
+import { AdminReservationsComponent } from './components/admin-reservations/admin-reservations.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,8 @@ import { CartComponent } from './components/cart/cart.component';
     AdminordersComponent,
     AdminRegisterFormComponent,
     CartComponent,
+    ReservationFormComponent,
+    AdminReservationsComponent,
  
 
   ],

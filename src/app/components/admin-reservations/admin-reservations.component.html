@@ -1,0 +1,28 @@
+<div class="table-responsive">
+
+    <table class="table table-hover">
+        <thead>
+            <tr >
+                <th class="col"> ID </th>
+                <th class="col">  Name </th>
+                <th class="col"> Phone </th>
+                <th class="col"> Reservation date and time </th>
+                <th class="col"> Number of People </th>
+                <th class="col"> Action </th>
+            </tr>
+        </thead>
+        <tbody >
+    
+            <tr *ngFor="let index of reservations">
+                <td class="col"> {{index.id}}</td>
+                <td class="col"> {{index.name}}</td>
+                <td class="col"> {{index.phone_number}}</td>
+                <td class="col"> {{index.reservation_date | date:'short'}}</td>
+                <td class="col"> {{index.numberofpeople}}</td>
+                <td><button class="btn btn-danger" (click)="removeItem(index.id)"><i
+                    class="fas fa-trash"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>

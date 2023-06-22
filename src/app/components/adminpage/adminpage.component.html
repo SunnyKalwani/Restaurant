@@ -20,6 +20,7 @@
         <button class="btn m-1" (click)="viewContent = 'addDeleteEdit'"> Delete Item</button>
         <button class="btn m-1" (click)="viewContent = 'viewFeedbacks'"> View Party Orders </button>
         <button class="btn m-1" (click)="viewContent = 'viewOrders'"> View Orders </button>
+        <button class="btn m-1" (click)="viewContent = 'viewReservations'"> View Reservations </button>
     </div>
     <div [ngSwitch]="viewContent">
 
@@ -42,6 +43,9 @@
         <div class="container text-center py-5" *ngSwitchDefault class="container py-5">
             <h1>Choose a button <i style="font-size: 200px;" class="fa-solid fa-arrow-trend-up"></i></h1>
 
+        </div>
+        <div class="container py-5" *ngSwitchCase = "'viewReservations'">
+            <app-admin-reservations></app-admin-reservations>
         </div>
 
     </div>

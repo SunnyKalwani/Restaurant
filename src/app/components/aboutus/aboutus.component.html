@@ -1,5 +1,7 @@
 <div class="container-fluid p-5 text-center fontStyle" id="aboutUs">
-    <div class="container p-5 row bg-white shadow rounded border" >
+   
+   <!-- Our Story Section -->
+    <div class="container p-5 row bg-white shadow rounded border">
         <div class="container-fluid col-md-6 col-12">
             <img src="https://cdn.pixabay.com/photo/2020/01/31/07/26/chef-4807317_640.jpg"
                 class="img-fluid w-100 h-100 rounded ">
@@ -10,16 +12,17 @@
                 Traditional Indian food is renowned worldwide for its wonderful use of herbs and spices, and its diverse
                 range of deep-fried snacks, pastries, curries, gravies, sauces, rice dishes, tandoor-cooked meats,
                 vegetable dishes, chutneys, breads and sweets.
-            
-            <br><br>
+
+                <br><br>
                 Try our Delicious cousine <span style="color: red;">NOW!!!</span>
             </p>
-            <button class="text-dark btn my-2 w-100 display-6 shadow rounded" routerLink = "/menu"> Order Now</button>
+            <button class="text-dark btn my-2 w-100 display-6 shadow rounded" routerLink="/menu"> Order Now</button>
         </div>
     </div>
 
-    <div class="container-fluid row p-5 text-center bg-white shadow mt-5 rounded " >
-        <div class="col-md-6 col bg-light shadow rounded ">
+    <!-- About Us Content -->
+    <div class="container-fluid row p-5 text-center bg-white shadow mt-5 rounded ">
+        <div class="col-md-6 col-lg-6 col bg-light shadow rounded ">
             <h1 class="my-3 display-6"> Want to Learn more about Us?</h1>
             <h4 class="my-3 display-6"> Follow us on Social Media!!!</h4>
             <div class="row my-5">
@@ -48,8 +51,10 @@
         </div>
 
 
-        <div class="col-md-6 col my-5">
-            <app-about-timing></app-about-timing>
+        <div class="col-md-6 col my-5 d-none d-sm-block">
+            <!-- <app-about-timing></app-about-timing> -->
+            <img class="img-fluid w-100 h-100  rounded shadow p-2 ms-4"
+                src="https://cdn.pixabay.com/photo/2016/11/18/14/05/brick-wall-1834784_1280.jpg" alt="">
         </div>
         <!-- Modal for Form to place party order... -->
         <div class="modal fade" id="feedback" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -76,11 +81,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <app-comments></app-comments>
-
-                        <br><br>
                         <h3> Leave a Review...</h3>
                         <app-customer-comment></app-customer-comment>
+
+                        <br><br>
+                       
+                        <app-comments></app-comments>
                     </div>
 
                 </div>
